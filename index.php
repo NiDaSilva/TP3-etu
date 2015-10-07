@@ -3,6 +3,7 @@ include_once('class/autoload.php');
 
 $ConnexionBaseSIO = new Connexion();
 $IDconnexion = $ConnexionBaseSIO->IDconnexion;
+
 if (!$IDconnexion){
 $pageInitiale->corps = "problème d'accès à la base de données
 </article></section>";
@@ -42,7 +43,7 @@ $pageInitiale = new page_base("Formulaire");
 	</div>
 	<div>
 		<label for="dept">Département</label>
-		<input type="number" id="age" name="age" min="1" max="101"/>
+		<input type="number" id="age" name="departement" min="1" max="101"/>
 	</div>	
 	<div>
 		<label for="pays">Pays</label>
@@ -57,7 +58,7 @@ $pageInitiale = new page_base("Formulaire");
 	</div>
 	<div>
 		<label for="dateN">Né(e) le : </label>
-		<input type="text" id="datepicker"/>
+		<input type="text" id="datepicker" name="date_naiss"/>
 	</div>	
 	<div>
 		<input type="radio" id="sexeH" name="sexe" value="femme"/>Femme
@@ -93,7 +94,7 @@ $pageInitiale = new page_base("Formulaire");
 		<option value=" ">-- les spécialités --</option>
 		</select>
 </fieldset>
-<input type="submit" value="Je m\'inscris" name="inscription" id="inscription" />
+<input type="submit" value="Je m\'inscris" name="inscription" id="inscription" onclick="insertionBDD()"/>
 <input type="reset" value="Effacer" name="effacer" id="effacer" />
 </form>';
 	

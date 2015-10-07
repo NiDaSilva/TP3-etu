@@ -43,8 +43,10 @@ var valid=true;
 		}	
 		
 	return true;
-	
-
+  <?php
+	$requete='INSERT INTO etudiant (nom, prenom, departement, pays, date_naiss)
+    VALUES ('".$_POST['nom']."','".$_POST['prenom']."','".$_POST['departement']."','".$_POST['pays']."','".$_POST['date_naiss']."');';
+  ?>
 }
 
 function verifChaine(champ)
